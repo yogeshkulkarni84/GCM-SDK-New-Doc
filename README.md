@@ -15,22 +15,28 @@ STEP2:
 Modify build.gradle file as follows -
 
 1] Add below code at the bottom of build.gradle file:
+
 repositories{
    flatDir { dirs 'libs' }
 }
 
 2] Add below code in Dependencies (not in child dependencies):
+
+```java
 compile(name:'SmartechGCMSDK', ext:'aar')
 compile 'com.google.code.gson:gson:2.8.0'
 compile "com.google.android.gms:play-services:9.6.0"
+```
 
 # Integration Steps for Push Notifications
 STEP1:
 
 Add below code in LAUNCHER activity under onCreate method and above the super.onCreate.line:
+
 NetcoreSDK.register(getApplication(),”<Smartech app Id>”, ”<GCM senderId>”, "<User identity>");
    
-**NOTE:** 
+**NOTE:**
+
 1] User Identity can either be ""(blank) OR **Primary Key** of the user defined on Smartech panel.
 
 2] With the above code, Smartech SDK will start sending **App Launch** and **First Launch** activities by default.
@@ -38,13 +44,17 @@ NetcoreSDK.register(getApplication(),”<Smartech app Id>”, ”<GCM senderId>�
 # Integration Steps for App Activity Tracking
 
 For Login Activity:
+
 NetcoreSDK.login( context, <"User identity"> );
 
 For Logout Activity:
+
 NetcoreSDK.logout( context, <"User identity"> );
 
 # For Any Other Custom Activity Tracking: (ex. - AddtoCart, Checkout, Searched, etc.)
+
 NetcoreSDK.track( context, <"User identity">,<"eventId">,<"payload">);
 
-**NOTE:** 
+**NOTE:**
+
 Ready-to-use Custom Activity tracking code is available on Smartech panel for every created activity.
