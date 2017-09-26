@@ -2,6 +2,7 @@
 
 # PREREQUISITES:
 1] Get GCM Sender Id and API Key from Google Developer console.
+
 2] Get App Id and Smartech GCM SDK from Smartech Panel.
 
 # SDK Integration Steps (mandatory):
