@@ -9,9 +9,11 @@
 STEP1:
 
 Add Netcore SDK (i.e. SmartechGCMSDK.aar file) in libs directory.
+
 STEP2:
 
 Modify build.gradle file as follows -
+
 1] Add below code at the bottom of build.gradle file:
 repositories{
    flatDir { dirs 'libs' }
