@@ -39,7 +39,7 @@ Add below code in LAUNCHER activity under onCreate method and above the super.on
 NetcoreSDK.register(getApplication(),”<Smartech app Id>”, ”<GCM senderId>”, "<User identity>");
 ```
    
-**NOTE:**
+> **NOTE:**
 
 1] User Identity can either be ""(blank) OR **Primary Key** of the user defined on Smartech panel.
 
