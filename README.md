@@ -16,9 +16,11 @@ Modify build.gradle file as follows -
 
 1] Add below code at the bottom of build.gradle file:
 
+```java
 repositories{
    flatDir { dirs 'libs' }
 }
+```
 
 2] Add below code in Dependencies (not in child dependencies):
 
@@ -33,7 +35,9 @@ STEP1:
 
 Add below code in LAUNCHER activity under onCreate method and above the super.onCreate.line:
 
+```java
 NetcoreSDK.register(getApplication(),”<Smartech app Id>”, ”<GCM senderId>”, "<User identity>");
+```
    
 **NOTE:**
 
@@ -45,15 +49,21 @@ NetcoreSDK.register(getApplication(),”<Smartech app Id>”, ”<GCM senderId>�
 
 For Login Activity:
 
+```java
 NetcoreSDK.login( context, <"User identity"> );
+```
 
 For Logout Activity:
 
+```java
 NetcoreSDK.logout( context, <"User identity"> );
+```
 
 # For Any Other Custom Activity Tracking: (ex. - AddtoCart, Checkout, Searched, etc.)
 
+```java
 NetcoreSDK.track( context, <"User identity">,<"eventId">,<"payload">);
+```
 
 **NOTE:**
 
